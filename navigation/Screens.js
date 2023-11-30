@@ -150,6 +150,53 @@ function ProfileStack(props) {
   );
 }
 
+function AccountStack(props) {
+  return (
+    <Stack.Navigator
+      initialRouteName="register"
+      screenOptions={{
+        mode: "card",
+        headerShown: "screen",
+      }}
+    >
+      <Stack.Screen
+        name="register"
+        component={Register}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              transparent
+              white
+              title="Register"
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          cardStyle: { backgroundColor: "#FFFFFF" },
+          headerTransparent: true,
+        }}
+      />
+      <Stack.Screen
+        name="Pro"
+        component={Pro}
+        options={{
+          header: ({ navigation, scene }) => (
+            <Header
+              title=""
+              back
+              white
+              transparent
+              navigation={navigation}
+              scene={scene}
+            />
+          ),
+          headerTransparent: true,
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
 function HomeStack(props) {
   return (
     <Stack.Navigator
